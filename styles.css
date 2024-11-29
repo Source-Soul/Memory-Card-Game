@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    /*height: 100vh;
+    display: flex;*/
+    background: rgb(123, 19, 152);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 96vh;
+    margin: 0;
+    /*background-color: #f0f8ff;*/
+    
+}
+.game-title {
+    font-size: 4em;             /* Large font size */
+    color: #ff6f61;             /* Vibrant coral color */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    margin-bottom: 20px;        /* Space between title and game */
+    text-align: center;
+}
+
+.memory-game {
+    width: 650px;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    /*border: 2px solid rgb(190, 206, 42);*/
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(35% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+  }
+
+.memory-card:active {
+    transform: scale(.97s);
+    transition: transform .2s;
+
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+  }
+
+/*img {
+    width: 100px;
+}*/
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+
+    border: 2px solid yellow;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
